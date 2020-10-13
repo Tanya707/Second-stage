@@ -1,0 +1,11 @@
+com\epam\ta\service\UserCreator.class
+com\epam\ta\driver\DriverSingleton.class
+com\epam\ta\test\CommonConditions.class
+com\epam\ta\util\TestListener.class
+com\epam\ta\model\User.class
+MainMethods\Hardcore.class
+com\epam\ta\service\TestDataReader.class
+com\epam\ta\page\AbstractClass.class
+com\epam\ta\page\HardcoreResultPage.class
+com\epam\ta\page\HardcoreHomePage.class
+com\epam\ta\test\Hardcore.class
