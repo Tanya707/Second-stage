@@ -61,7 +61,7 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "copy_address")
     private WebElement emailAddress;
 
-    @FindBy(css = "#input_426")
+    @FindBy(css = "#input_440")
     private WebElement inputEmail;
 
 
