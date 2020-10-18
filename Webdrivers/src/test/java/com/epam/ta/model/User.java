@@ -16,12 +16,9 @@ public class User {
     private String resultTotalHours;
     private String resultCost;
 
-    public User(String numberOfInstances, String instanceType, String numberOfGPUs, String GPUtype, String localSSD, String datacenterLocation, String commitedUsage, String resultNumberOfInstances, String resultInstancetype, String resultTotalHours, String resultCost) {
+    public User(String numberOfInstances, String instanceType, String datacenterLocation, String commitedUsage, String resultNumberOfInstances, String resultInstancetype, String resultTotalHours, String resultCost) {
         this.numberOfInstances = numberOfInstances;
         this.instanceType = instanceType;
-        this.numberOfGPUs = numberOfGPUs;
-        this.GPUtype = GPUtype;
-        this.localSSD = localSSD;
         this.datacenterLocation = datacenterLocation;
         this.commitedUsage = commitedUsage;
         this.resultNumberOfInstances = resultNumberOfInstances;
@@ -44,30 +41,6 @@ public class User {
 
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
-    }
-
-    public String getNumberOfGPUs() {
-        return numberOfGPUs;
-    }
-
-    public void setNumberOfGPUs(String numberOfGPUs) {
-        this.numberOfGPUs = numberOfGPUs;
-    }
-
-    public String getGPUtype() {
-        return GPUtype;
-    }
-
-    public void setGPUtype(String GPUtype) {
-        this.GPUtype = GPUtype;
-    }
-
-    public String getLocalSSD() {
-        return localSSD;
-    }
-
-    public void setLocalSSD(String localSSD) {
-        this.localSSD = localSSD;
     }
 
     public String getDatacenterLocation() {
@@ -123,9 +96,6 @@ public class User {
         return "Data of form{" +
                 "Number of instances='" + numberOfInstances + '\'' +
                 ", Instance type'" + instanceType + '\''+
-                ", Number of GPUs'" + numberOfGPUs+ '\''+
-                ", GPU type'" + GPUtype+ '\''+
-                ", Local SSD'" + localSSD+ '\''+
                 ", Datacenter location'" + datacenterLocation+ '\''+
                 ", Commited usage'" + commitedUsage+ '\''+
                 ", Result number of instances'" + resultNumberOfInstances+ '\''+
@@ -142,9 +112,6 @@ public class User {
         User user = (User) o;
         return Objects.equals(getNumberOfInstances(), user.getNumberOfInstances()) &&
                 Objects.equals(getInstanceType(), user.getInstanceType())&&
-                Objects.equals(getNumberOfGPUs(), user.getNumberOfGPUs())&&
-                Objects.equals(getGPUtype(), user.getGPUtype())&&
-                Objects.equals(getLocalSSD(), user.getLocalSSD())&&
                 Objects.equals(getDatacenterLocation(), user.getDatacenterLocation())&&
                 Objects.equals(getCommitedUsage(), user.getCommitedUsage())&&
                 Objects.equals(getResultNumberOfInstances(), user.getResultNumberOfInstances())&&
@@ -156,6 +123,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNumberOfInstances(), getInstanceType(), getNumberOfGPUs(), getGPUtype(), getLocalSSD(), getDatacenterLocation(), getCommitedUsage(), getResultNumberOfInstances(), getResultInstancetype(), getResultTotalHours(), getResultCost());
+        return Objects.hash(getNumberOfInstances(), getInstanceType(), getDatacenterLocation(), getCommitedUsage(), getResultNumberOfInstances(), getResultInstancetype(), getResultTotalHours(), getResultCost());
     }
 }

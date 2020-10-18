@@ -15,17 +15,17 @@ public class Hardcore {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://cloud.google.com/products/calculator");
 
-//        WebElement searchButton = driver.findElement(By.xpath("/html/body/section/devsite-header/div/div[1]/div/div/div[2]/devsite-search/form/div[1]/div/input"));
-//        searchButton.sendKeys("Google Cloud Platform Pricing Calculator");
-//        searchButton.sendKeys(Keys.ENTER);
+        WebElement searchButton = driver.findElement(By.xpath("/html/body/section/devsite-header/div/div[1]/div/div/div[2]/devsite-search/form/div[1]/div/input"));
+        searchButton.sendKeys("Google Cloud Platform Pricing Calculator");
+        searchButton.sendKeys(Keys.ENTER);
 
 
        WebDriverWait wait = new WebDriverWait(driver,30);
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a")));
-//
-//        WebElement searchResult = driver.findElement(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a")));
+
+        WebElement searchResult = driver.findElement(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
-//        searchResult.click();
+        searchResult.click();
 
         driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"cloud-site\"]/devsite-iframe/iframe")));
         driver.switchTo().frame("myFrame");

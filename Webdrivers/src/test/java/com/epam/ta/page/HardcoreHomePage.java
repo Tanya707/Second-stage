@@ -81,6 +81,7 @@ public class HardcoreHomePage extends AbstractClass {
         public HardcoreHomePage searchCalculator(String text) {
            searchButton.sendKeys(text);
            searchButton.sendKeys(Keys.ENTER);
+
            return this;
     }
 
@@ -95,12 +96,14 @@ public class HardcoreHomePage extends AbstractClass {
             driver.switchTo().frame("myFrame");
             wait.until(ExpectedConditions.elementToBeClickable(numberOfInstances));
             numberOfInstances.sendKeys(user.getNumberOfInstances());
+            sleepWait(5);
             return this;
     }
 
         public HardcoreHomePage instanceType (User user){
             executorScrollAndClick(instanceTypeClick);
             WebElement instanceType = driver.findElement(By.xpath(user.getInstanceType()));
+            sleepWait(5);
             executorScrollAndClick(instanceType);
             return this;
         }
@@ -141,6 +144,7 @@ public class HardcoreHomePage extends AbstractClass {
         public HardcoreHomePage chooseDatacenterLocation (User user) {
             executorScrollAndClick(datacenterLocationClick);
             WebElement datacenterLocation = driver.findElement(By.xpath(user.getDatacenterLocation()));
+            sleepWait(5);
             executorScrollAndClick(datacenterLocation);
             return this;
         }
@@ -148,11 +152,13 @@ public class HardcoreHomePage extends AbstractClass {
         public HardcoreHomePage chooseCommitedUsage (User user) {
             executorScrollAndClick(commitedUsageClick);
             WebElement commitedUsage = driver.findElement(By.xpath(user.getCommitedUsage()));
+            sleepWait(5);
             executorScrollAndClick(commitedUsage);
             return this;
         }
 
         public HardcoreHomePage addToEstimateClick () {
+            sleepWait(5);
             executorScrollAndClick(addToEstimate);
             return this;
         }

@@ -20,7 +20,7 @@ public class HardcoreResultPage extends AbstractClass {
     @FindBy (css = "md-list-item.md-1-line:nth-child(2) > div:nth-child(1)")
     private WebElement resultTotalHours;
 
-    @FindBy (css = "md-list-item.md-1-line:nth-child(14) > div:nth-child(1) > b:nth-child(1)")
+    @FindBy (css = "h2.md-title:nth-child(2) > b:nth-child(1)")
     private WebElement resultCost;
 
     public HardcoreResultPage(WebDriver driver){
@@ -29,8 +29,7 @@ public class HardcoreResultPage extends AbstractClass {
     }
 
     public HardcoreResultPage sendEmail(){
-        executorScroll(sendEmail);
-        executorClick(sendEmail);
+        executorScrollAndClick(sendEmail);
         return this;
     }
 
