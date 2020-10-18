@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class HardcoreMiddlePage extends AbstractClass {
 
-    private static final String HOMEPAGE_URL = "https://cloud.google.com/";
     private static final String NEWHOMEPAGE_URL = "https://10minutemail.com";
     private WebDriverWait wait;
 
