@@ -39,52 +39,52 @@ public class Hardcore {
                 ,instanceTypeClick);
         executor.executeScript("arguments[0].click();", instanceTypeClick);
 
-        WebElement instanceType = driver.findElement(By.xpath("//*[@id=\"select_option_237\"]/div[1]"));
+        WebElement instanceType = driver.findElement(By.xpath("//*[@id=\"select_option_234\"]/div[1]"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,instanceType);
         executor.executeScript("arguments[0].click();", instanceType);
 
-        WebElement addGPUs = driver.findElement(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-             ,addGPUs);
-        executor.executeScript("arguments[0].click();", addGPUs);
-
-        WebElement numberOfGPUsClick = driver.findElement(By.id("select_value_label_371"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,numberOfGPUsClick);
-        executor.executeScript("arguments[0].click();", numberOfGPUsClick);
-
-        WebElement numberOfGPUs = driver. findElement(By.xpath("//*[@id=\"select_option_378\"]/div[1]"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,numberOfGPUs);
-        executor.executeScript("arguments[0].click();", numberOfGPUs);
-
-        WebElement GPUtypeClick = driver.findElement(By.id("select_value_label_372"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-             ,GPUtypeClick);
-        executor.executeScript("arguments[0].click();", GPUtypeClick);
-
-        WebElement GPUtype = driver. findElement(By.xpath("//*[@id=\"select_option_385\"]/div[1]"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-             ,GPUtype);
-        executor.executeScript("arguments[0].click();", GPUtype);
-
-        WebElement localSSDClick = driver.findElement(By.id("select_value_label_193"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,localSSDClick);
-        executor.executeScript("arguments[0].click();", localSSDClick);
-
-        WebElement localSSD = driver.findElement(By.xpath("//*[@id=\"select_option_258\"]/div[1]"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,localSSD);
-        executor.executeScript("arguments[0].click();", localSSD);
+//        WebElement addGPUs = driver.findElement(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//             ,addGPUs);
+//        executor.executeScript("arguments[0].click();", addGPUs);
+//
+//        WebElement numberOfGPUsClick = driver.findElement(By.id("select_value_label_371"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,numberOfGPUsClick);
+//        executor.executeScript("arguments[0].click();", numberOfGPUsClick);
+//
+//        WebElement numberOfGPUs = driver. findElement(By.xpath("//*[@id=\"select_option_378\"]/div[1]"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,numberOfGPUs);
+//        executor.executeScript("arguments[0].click();", numberOfGPUs);
+//
+//        WebElement GPUtypeClick = driver.findElement(By.id("select_value_label_372"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//             ,GPUtypeClick);
+//        executor.executeScript("arguments[0].click();", GPUtypeClick);
+//
+//        WebElement GPUtype = driver. findElement(By.xpath("//*[@id=\"select_option_385\"]/div[1]"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//             ,GPUtype);
+//        executor.executeScript("arguments[0].click();", GPUtype);
+//
+//        WebElement localSSDClick = driver.findElement(By.id("select_value_label_193"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,localSSDClick);
+//        executor.executeScript("arguments[0].click();", localSSDClick);
+//
+//        WebElement localSSD = driver.findElement(By.xpath("//*[@id=\"select_option_258\"]/div[1]"));
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,localSSD);
+//        executor.executeScript("arguments[0].click();", localSSD);
 
         WebElement datacenterLocationClick = driver.findElement(By.id("select_value_label_59"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,datacenterLocationClick);
         executor.executeScript("arguments[0].click();", datacenterLocationClick);
 
-        WebElement datacenterLocation = driver.findElement(By.xpath("//*[@id=\"select_option_205\"]/div"));
+        WebElement datacenterLocation = driver.findElement(By.xpath("//*[@id=\"select_option_203\"]/div"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,datacenterLocation);
         executor.executeScript("arguments[0].click();", datacenterLocation);
@@ -100,11 +100,11 @@ public class Hardcore {
         executor.executeScript("arguments[0].click();", commitedUsage);
         Thread.sleep(2000);
 
-        WebElement addToEstimate = driver.findElement(By.cssSelector("div.layout-align-end-start:nth-child(17) > button:nth-child(1)"));
+        WebElement addToEstimate = driver.findElement(By.cssSelector("div.layout-align-end-start:nth-child(14) > button:nth-child(1)"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,addToEstimate);
         executor.executeScript("arguments[0].click();", addToEstimate);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         WebElement emailEstimate = driver.findElement(By.cssSelector("#email_quote"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
@@ -125,7 +125,7 @@ public class Hardcore {
 
         driver.switchTo().window(tabs.get(0));
 
-        WebElement inputEmail = driver.findElement(By.cssSelector("#input_440"));
+        WebElement inputEmail = driver.findElement(By.cssSelector("#input_396"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
              ,inputEmail);
         executor.executeScript("arguments[0].click();", inputEmail);

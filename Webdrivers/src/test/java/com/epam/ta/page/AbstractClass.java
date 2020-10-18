@@ -15,13 +15,13 @@ public abstract class AbstractClass {
         PageFactory.initElements(driver, this);
     }
 
-    protected AbstractClass executorScroll(WebElement element){
+    protected AbstractClass executorScrollAndClick(WebElement element){
         executor.executeScript("arguments[0].scrollIntoView();", element);
+        executor.executeScript("arguments[0].click();", element);
         return this;
     }
-
-    protected AbstractClass executorClick(WebElement element){
-        executor.executeScript("arguments[0].click();", element);
+    protected AbstractClass executorScroll(WebElement element){
+        executor.executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }
 

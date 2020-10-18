@@ -34,17 +34,17 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "select_value_label_58")
     private WebElement instanceTypeClick;
 
-    @FindBy(xpath = "//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]")
-    private WebElement addGPUs;
-
-    @FindBy(id = "select_value_label_371")
-    private WebElement numberOfGPUsClick;
-
-    @FindBy(id = "select_value_label_372")
-    private WebElement GPUtypeClick;
-
-    @FindBy(id = "select_value_label_193")
-    private WebElement localSSDClick;
+//    @FindBy(xpath = "//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]")
+//    private WebElement addGPUs;
+//
+//    @FindBy(id = "select_value_label_371")
+//    private WebElement numberOfGPUsClick;
+//
+//    @FindBy(id = "select_value_label_372")
+//    private WebElement GPUtypeClick;
+//
+//    @FindBy(id = "select_value_label_193")
+//    private WebElement localSSDClick;
 
     @FindBy(id = "select_value_label_59")
     private WebElement datacenterLocationClick;
@@ -52,7 +52,7 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "select_value_label_60")
     private WebElement commitedUsageClick;
 
-    @FindBy(css = "div.layout-align-end-start:nth-child(17) > button:nth-child(1)")
+    @FindBy(css = "div.layout-align-end-start:nth-child(14) > button:nth-child(1)")
     private WebElement addToEstimate;
 
     @FindBy(css = "#email_quote")
@@ -61,7 +61,7 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "copy_address")
     private WebElement emailAddress;
 
-    @FindBy(css = "#input_440")
+    @FindBy(css = "#input_396")
     private WebElement inputEmail;
 
 
@@ -73,7 +73,7 @@ public class HardcoreHomePage extends AbstractClass {
 
 
         public HardcoreHomePage openPage() {
-//           driver.get(HOMEPAGE_URL);
+
              driver.navigate().to(HOMEPAGE_URL);
            return this;
     }
@@ -99,74 +99,66 @@ public class HardcoreHomePage extends AbstractClass {
     }
 
         public HardcoreHomePage instanceType (User user){
-            executorScroll(instanceTypeClick);
-            executorClick(instanceTypeClick);
+            executorScrollAndClick(instanceTypeClick);
             WebElement instanceType = driver.findElement(By.xpath(user.getInstanceType()));
-            executorScroll(instanceType);
-            executorClick(instanceType);
+            executorScrollAndClick(instanceType);
             return this;
         }
 
-        public HardcoreHomePage addGPUs () {
-            executorScroll(addGPUs);
-            executorClick(addGPUs);
-            return this;
-        }
-
-        public HardcoreHomePage chooseNumberOfGPUs (User user) {
-            executorScroll(numberOfGPUsClick);
-            executorClick(numberOfGPUsClick);
-            WebElement numberOfGPUs = driver.findElement(By.xpath(user.getNumberOfGPUs()));
-            executorScroll(numberOfGPUs);
-            executorClick(numberOfGPUs);
-            return this;
-        }
-
-        public HardcoreHomePage chooseGPUtype (User user) {
-            executorScroll(GPUtypeClick);
-            executorClick(GPUtypeClick);
-            WebElement GPUtype = driver.findElement(By.xpath(user.getGPUtype()));
-            executorScroll(GPUtype);
-            executorClick(GPUtype);
-            return this;
-        }
-
-        public HardcoreHomePage chooseLocalSSD (User user) {
-            executorScroll(localSSDClick);
-            executorClick(localSSDClick);
-            WebElement localSSD = driver.findElement(By.xpath(user.getLocalSSD()));
-            executorScroll(localSSD);
-            executorClick(localSSD);
-            return this;
-        }
+//        public HardcoreHomePage addGPUs () {
+//            executorScroll(addGPUs);
+//            executorClick(addGPUs);
+//            return this;
+//        }
+//
+//        public HardcoreHomePage chooseNumberOfGPUs (User user) {
+//            executorScroll(numberOfGPUsClick);
+//            executorClick(numberOfGPUsClick);
+//            WebElement numberOfGPUs = driver.findElement(By.xpath(user.getNumberOfGPUs()));
+//            executorScroll(numberOfGPUs);
+//            executorClick(numberOfGPUs);
+//            return this;
+//        }
+//
+//        public HardcoreHomePage chooseGPUtype (User user) {
+//            executorScroll(GPUtypeClick);
+//            executorClick(GPUtypeClick);
+//            WebElement GPUtype = driver.findElement(By.xpath(user.getGPUtype()));
+//            executorScroll(GPUtype);
+//            executorClick(GPUtype);
+//            return this;
+//        }
+//
+//        public HardcoreHomePage chooseLocalSSD (User user) {
+//            executorScroll(localSSDClick);
+//            executorClick(localSSDClick);
+//            WebElement localSSD = driver.findElement(By.xpath(user.getLocalSSD()));
+//            executorScroll(localSSD);
+//            executorClick(localSSD);
+//            return this;
+//        }
 
         public HardcoreHomePage chooseDatacenterLocation (User user) {
-            executorScroll(datacenterLocationClick);
-            executorClick(datacenterLocationClick);
+            executorScrollAndClick(datacenterLocationClick);
             WebElement datacenterLocation = driver.findElement(By.xpath(user.getDatacenterLocation()));
-            executorScroll(datacenterLocation);
-            executorClick(datacenterLocation);
+            executorScrollAndClick(datacenterLocation);
             return this;
         }
 
         public HardcoreHomePage chooseCommitedUsage (User user) {
-            executorScroll(commitedUsageClick);
-            executorClick(commitedUsageClick);
+            executorScrollAndClick(commitedUsageClick);
             WebElement commitedUsage = driver.findElement(By.xpath(user.getCommitedUsage()));
-            executorScroll(commitedUsage);
-            executorClick(commitedUsage);
+            executorScrollAndClick(commitedUsage);
             return this;
         }
 
         public HardcoreHomePage addToEstimateClick () {
-            executorScroll(addToEstimate);
-            executorClick(addToEstimate);
+            executorScrollAndClick(addToEstimate);
             return this;
         }
 
         public HardcoreHomePage addToEmailEstimateClick () {
-            executorScroll(emailEstimate);
-            executorClick(emailEstimate);
+            executorScrollAndClick(emailEstimate);
             return this;
         }
 
@@ -183,8 +175,7 @@ public class HardcoreHomePage extends AbstractClass {
         }
 
         public HardcoreHomePage inputEmailAddress () {
-            executorScroll(inputEmail);
-            executorClick(inputEmail);
+            executorScrollAndClick(inputEmail);
             inputEmail.sendKeys(Keys.CONTROL + "v");
             return this;
         }
