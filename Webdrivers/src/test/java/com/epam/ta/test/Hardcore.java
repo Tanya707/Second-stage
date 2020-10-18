@@ -1,7 +1,8 @@
 package com.epam.ta.test;
 
-import com.epam.ta.model.User;
-import com.epam.ta.service.UserCreator;
+import com.epam.ta.model.Data;
+import com.epam.ta.page.HardcoreMiddlePage;
+import com.epam.ta.service.DataCreator;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 import com.epam.ta.page.HardcoreHomePage;
@@ -11,7 +12,7 @@ import com.epam.ta.page.HardcoreResultPage;
 public class Hardcore extends CommonConditions {
     @Test
     public void Test () {
-        User testUser  = UserCreator.withCredentialsFromProperty();
+        Data testUser  = DataCreator.withCredentialsFromProperty();
         HardcoreHomePage expectedCalculatorResults = new HardcoreHomePage (driver)
                 .openPage()
                 .searchCalculator("Google Cloud Platform Pricing Calculator")
@@ -19,7 +20,9 @@ public class Hardcore extends CommonConditions {
                 .numberOfInstances(testUser)
                 .instanceType(testUser)
                 .chooseDatacenterLocation(testUser)
-                .chooseCommitedUsage(testUser)
+                .chooseCommitedUsage(testUser);
+
+        HardcoreMiddlePage expectedMiddleResults = new HardcoreMiddlePage(driver)
                 .addToEstimateClick()
                 .addToEmailEstimateClick()
                 .getEmailAddress()

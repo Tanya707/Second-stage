@@ -2,13 +2,10 @@ package com.epam.ta.model;
 
 import java.util.Objects;
 
-public class User {
+public class Data {
 
     private String numberOfInstances;
     private String instanceType;
-    private String numberOfGPUs;
-    private String GPUtype;
-    private String localSSD;
     private String datacenterLocation;
     private String commitedUsage;
     private String resultNumberOfInstances;
@@ -16,7 +13,7 @@ public class User {
     private String resultTotalHours;
     private String resultCost;
 
-    public User(String numberOfInstances, String instanceType, String datacenterLocation, String commitedUsage, String resultNumberOfInstances, String resultInstancetype, String resultTotalHours, String resultCost) {
+    public Data(String numberOfInstances, String instanceType, String datacenterLocation, String commitedUsage, String resultNumberOfInstances, String resultInstancetype, String resultTotalHours, String resultCost) {
         this.numberOfInstances = numberOfInstances;
         this.instanceType = instanceType;
         this.datacenterLocation = datacenterLocation;
@@ -108,8 +105,8 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
+        if (!(o instanceof Data)) return false;
+        Data user = (Data) o;
         return Objects.equals(getNumberOfInstances(), user.getNumberOfInstances()) &&
                 Objects.equals(getInstanceType(), user.getInstanceType())&&
                 Objects.equals(getDatacenterLocation(), user.getDatacenterLocation())&&

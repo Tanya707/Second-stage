@@ -1,7 +1,6 @@
 package com.epam.ta.page;
 
-import com.epam.ta.model.User;
-import com.epam.ta.service.UserCreator;
+import com.epam.ta.model.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -52,18 +51,6 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "select_value_label_60")
     private WebElement commitedUsageClick;
 
-    @FindBy(css = "div.layout-align-end-start:nth-child(14) > button:nth-child(1)")
-    private WebElement addToEstimate;
-
-    @FindBy(css = "#email_quote")
-    private WebElement emailEstimate;
-
-    @FindBy(id = "copy_address")
-    private WebElement emailAddress;
-
-    @FindBy(css = "#input_396")
-    private WebElement inputEmail;
-
 
         public HardcoreHomePage(WebDriver driver) {
            super(driver);
@@ -91,7 +78,7 @@ public class HardcoreHomePage extends AbstractClass {
            return this;
     }
 
-         public HardcoreHomePage numberOfInstances(User user) {
+         public HardcoreHomePage numberOfInstances(Data user) {
             driver.switchTo().frame(firstFrame);
             driver.switchTo().frame("myFrame");
             wait.until(ExpectedConditions.elementToBeClickable(numberOfInstances));
@@ -100,7 +87,7 @@ public class HardcoreHomePage extends AbstractClass {
             return this;
     }
 
-        public HardcoreHomePage instanceType (User user){
+        public HardcoreHomePage instanceType (Data user){
             executorScrollAndClick(instanceTypeClick);
             WebElement instanceType = driver.findElement(By.xpath(user.getInstanceType()));
             sleepWait(5);
@@ -141,7 +128,7 @@ public class HardcoreHomePage extends AbstractClass {
 //            return this;
 //        }
 
-        public HardcoreHomePage chooseDatacenterLocation (User user) {
+        public HardcoreHomePage chooseDatacenterLocation (Data user) {
             executorScrollAndClick(datacenterLocationClick);
             WebElement datacenterLocation = driver.findElement(By.xpath(user.getDatacenterLocation()));
             sleepWait(5);
@@ -149,7 +136,7 @@ public class HardcoreHomePage extends AbstractClass {
             return this;
         }
 
-        public HardcoreHomePage chooseCommitedUsage (User user) {
+        public HardcoreHomePage chooseCommitedUsage (Data user) {
             executorScrollAndClick(commitedUsageClick);
             WebElement commitedUsage = driver.findElement(By.xpath(user.getCommitedUsage()));
             sleepWait(5);
@@ -157,32 +144,4 @@ public class HardcoreHomePage extends AbstractClass {
             return this;
         }
 
-        public HardcoreHomePage addToEstimateClick () {
-            sleepWait(5);
-            executorScrollAndClick(addToEstimate);
-            return this;
-        }
-
-        public HardcoreHomePage addToEmailEstimateClick () {
-            executorScrollAndClick(emailEstimate);
-            return this;
-        }
-
-        public HardcoreHomePage getEmailAddress () {
-            executor.executeScript("window.open()");
-            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs.get(1));
-            driver.get(NEWHOMEPAGE_URL);
-            executorScroll(emailAddress);
-            emailAddress.click();
-            sleepWait(20);
-            driver.switchTo().window(tabs.get(0));
-            return this;
-        }
-
-        public HardcoreHomePage inputEmailAddress () {
-            executorScrollAndClick(inputEmail);
-            inputEmail.sendKeys(Keys.CONTROL + "v");
-            return this;
-        }
     }

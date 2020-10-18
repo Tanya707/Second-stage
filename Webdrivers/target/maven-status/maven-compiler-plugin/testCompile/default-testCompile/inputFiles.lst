@@ -1,11 +1,12 @@
+E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\service\DataCreator.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\test\CommonConditions.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\service\TestDataReader.java
+E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\model\Data.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\page\HardcoreHomePage.java
+E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\page\HardcoreMiddlePage.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\page\HardcoreResultPage.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\driver\DriverSingleton.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\test\Hardcore.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\page\AbstractClass.java
 E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\util\TestListener.java
 E:\Second-stage\Webdrivers\src\test\java\MainMethods\Hardcore.java
-E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\service\UserCreator.java
-E:\Second-stage\Webdrivers\src\test\java\com\epam\ta\model\User.java

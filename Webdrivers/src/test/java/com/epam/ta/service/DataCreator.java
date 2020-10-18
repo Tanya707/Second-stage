@@ -1,8 +1,8 @@
 package com.epam.ta.service;
 
-import com.epam.ta.model.User;
+import com.epam.ta.model.Data;
 
-public class UserCreator {
+public class DataCreator {
 
     public static final String TESTDATA_NUMBER_OF_INSTANCES = "testdata.number.of.instances";
     public static final String TESTDATA_INSTANCE_TYPE = "testdata.instance.type";
@@ -14,8 +14,8 @@ public class UserCreator {
     public static final String TESTDATA_RESULT_COST = "testdata.result.cost";
 
 
-    public static User withCredentialsFromProperty(){
-        return new User(TestDataReader.getTestData(TESTDATA_NUMBER_OF_INSTANCES),
+    public static Data withCredentialsFromProperty(){
+        return new Data(TestDataReader.getTestData(TESTDATA_NUMBER_OF_INSTANCES),
                 TestDataReader.getTestData(TESTDATA_INSTANCE_TYPE),
                 TestDataReader.getTestData(TESTDATA_DATACENTER_LOCATION),
                 TestDataReader.getTestData(TESTDATA_COMMITED_USAGE),
