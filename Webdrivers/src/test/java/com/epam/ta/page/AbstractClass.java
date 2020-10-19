@@ -1,9 +1,12 @@
 package com.epam.ta.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public abstract class AbstractClass {
     protected WebDriver driver;
@@ -24,6 +27,18 @@ public abstract class AbstractClass {
         executor.executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }
+
+    protected AbstractClass findOption (WebElement element, String instanceType) {
+        List<WebElement> options = element.findElements(By.tagName("div"));
+        for (WebElement option : options) {
+            if (instanceType.equals(option.getText())) {
+                executor.executeScript("arguments[0].click();", option);
+            }
+        }
+        return this;
+    }
+
+
 
     protected AbstractClass sleepWait(int second){
         try {

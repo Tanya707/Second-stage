@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Hardcore {
@@ -15,17 +16,17 @@ public class Hardcore {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://cloud.google.com/products/calculator");
 
-        WebElement searchButton = driver.findElement(By.xpath("/html/body/section/devsite-header/div/div[1]/div/div/div[2]/devsite-search/form/div[1]/div/input"));
-        searchButton.sendKeys("Google Cloud Platform Pricing Calculator");
-        searchButton.sendKeys(Keys.ENTER);
+//        WebElement searchButton = driver.findElement(By.xpath("/html/body/section/devsite-header/div/div[1]/div/div/div[2]/devsite-search/form/div[1]/div/input"));
+//        searchButton.sendKeys("Google Cloud Platform Pricing Calculator");
+//        searchButton.sendKeys(Keys.ENTER);
 
 
        WebDriverWait wait = new WebDriverWait(driver,30);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a")));
-
-        WebElement searchResult = driver.findElement(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a"));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a")));
+//
+//        WebElement searchResult = driver.findElement(By.xpath("//*[@id=\'___gcse_0\']/div/div/div/div[5]/div[2]/div/div/div[1]/div[1]/div[1]/div[1]/div/a"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
-        searchResult.click();
+//        searchResult.click();
 
         driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"cloud-site\"]/devsite-iframe/iframe")));
         driver.switchTo().frame("myFrame");
@@ -34,15 +35,37 @@ public class Hardcore {
         wait.until(ExpectedConditions.elementToBeClickable(numberOfInstances));
         numberOfInstances.sendKeys("4");
 
-        WebElement instanceTypeClick = driver.findElement(By.id("select_value_label_58"));
+        WebElement instanceTypeClick = driver.findElement(By.id("select_87"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,instanceTypeClick);
         executor.executeScript("arguments[0].click();", instanceTypeClick);
 
-        WebElement instanceType = driver.findElement(By.xpath("//*[@id=\"select_option_234\"]/div[1]"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,instanceType);
-        executor.executeScript("arguments[0].click();", instanceType);
+        WebElement option1 = driver.findElement(By.cssSelector("md-optgroup.ng-scope:nth-child(3)"));
+     List<WebElement> options = option1.findElements(By.tagName("div"));
+     for (WebElement option : options) {
+         System.out.println(option.getText());
+         if("e2-standard-8 (vCPUs: 8, RAM: 32GB)".equals(option.getText())){
+             executor.executeScript("arguments[0].click();", option);}
+
+
+//      if("e2-standard-8 (vCPUs: 8, RAM: 32GB)".equals(option.getText()))
+//       option.click();
+     }
+
+//        instanceTypeClick.sendKeys("e2-standard-8 (vCPUs: 8, RAM: 32GB)");
+
+
+
+
+//        WebElement instanceType = driver.findElement(By.partialLinkText("\ne2-standard-8 (vCPUs: 8, RAM: 32GB)\n"));
+//        instanceType.click();
+        Thread.sleep(10000);
+
+
+//     //*[@id="select_option_234"]/div[1]
+//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
+//                ,instanceType);
+//        executor.executeScript("arguments[0].click();", instanceType);
 
 //        WebElement addGPUs = driver.findElement(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]"));
 //        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
@@ -79,10 +102,19 @@ public class Hardcore {
 //                ,localSSD);
 //        executor.executeScript("arguments[0].click();", localSSD);
 
-        WebElement datacenterLocationClick = driver.findElement(By.id("select_value_label_59"));
+         WebElement datacenterLocationClick = driver.findElement(By.id("select_value_label_59"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,datacenterLocationClick);
         executor.executeScript("arguments[0].click();", datacenterLocationClick);
+        Thread.sleep(10000);
+
+        WebElement option12 = driver.findElement(By.cssSelector("#select_container_90 > md-select-menu:nth-child(1) > md-content:nth-child(1)"));
+        List<WebElement> options1 = option12.findElements(By.tagName("div"));
+        for (WebElement option : options1) {
+            System.out.println(option.getText());
+            if("Frankfurt (europe-west3)".equals(option.getText())){
+                executor.executeScript("arguments[0].click();", option);}}
+
 
         WebElement datacenterLocation = driver.findElement(By.xpath("//*[@id=\"select_option_203\"]/div"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
@@ -93,6 +125,20 @@ public class Hardcore {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,commitedUsageClick);
         executor.executeScript("arguments[0].click();", commitedUsageClick);
+
+        WebElement option13 = driver.findElement(By.cssSelector("#select_container_97 > md-select-menu:nth-child(1) > md-content:nth-child(1)"));
+        List<WebElement> options2 = option13.findElements(By.tagName("div"));
+        for (WebElement option : options2) {
+            System.out.println(option.getText());
+            if("Frankfurt (europe-west3)".equals(option.getText())){
+                executor.executeScript("arguments[0].click();", option);}}
+
+
+
+
+
+
+
 
         WebElement commitedUsage = driver.findElement(By.xpath("//*[@id=\"select_option_94\"]"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"

@@ -35,7 +35,6 @@ public class HardcoreMiddlePage extends AbstractClass {
     }
 
         public HardcoreMiddlePage addToEstimateClick () {
-            sleepWait(5);
             executorScrollAndClick(addToEstimate);
             return this;
         }

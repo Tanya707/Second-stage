@@ -33,23 +33,20 @@ public class HardcoreHomePage extends AbstractClass {
     @FindBy(id = "select_value_label_58")
     private WebElement instanceTypeClick;
 
-//    @FindBy(xpath = "//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[8]/div[1]/md-input-container/md-checkbox/div[2]")
-//    private WebElement addGPUs;
-//
-//    @FindBy(id = "select_value_label_371")
-//    private WebElement numberOfGPUsClick;
-//
-//    @FindBy(id = "select_value_label_372")
-//    private WebElement GPUtypeClick;
-//
-//    @FindBy(id = "select_value_label_193")
-//    private WebElement localSSDClick;
+    @FindBy (css = "md-optgroup.ng-scope:nth-child(3)")
+    private WebElement instanceTypeOption;
 
     @FindBy(id = "select_value_label_59")
     private WebElement datacenterLocationClick;
 
+    @FindBy(css = "#select_container_90 > md-select-menu:nth-child(1) > md-content:nth-child(1)")
+    private WebElement datacenterLocationOption;
+
     @FindBy(id = "select_value_label_60")
     private WebElement commitedUsageClick;
+
+    @FindBy(css = "#select_container_97 > md-select-menu:nth-child(1) > md-content:nth-child(1)")
+    private WebElement commitedUsageOption;
 
 
         public HardcoreHomePage(WebDriver driver) {
@@ -83,64 +80,24 @@ public class HardcoreHomePage extends AbstractClass {
             driver.switchTo().frame("myFrame");
             wait.until(ExpectedConditions.elementToBeClickable(numberOfInstances));
             numberOfInstances.sendKeys(user.getNumberOfInstances());
-            sleepWait(5);
             return this;
     }
 
         public HardcoreHomePage instanceType (Data user){
             executorScrollAndClick(instanceTypeClick);
-            WebElement instanceType = driver.findElement(By.xpath(user.getInstanceType()));
-            sleepWait(5);
-            executorScrollAndClick(instanceType);
+            findOption(instanceTypeOption,user.getInstanceType());
             return this;
         }
 
-//        public HardcoreHomePage addGPUs () {
-//            executorScroll(addGPUs);
-//            executorClick(addGPUs);
-//            return this;
-//        }
-//
-//        public HardcoreHomePage chooseNumberOfGPUs (User user) {
-//            executorScroll(numberOfGPUsClick);
-//            executorClick(numberOfGPUsClick);
-//            WebElement numberOfGPUs = driver.findElement(By.xpath(user.getNumberOfGPUs()));
-//            executorScroll(numberOfGPUs);
-//            executorClick(numberOfGPUs);
-//            return this;
-//        }
-//
-//        public HardcoreHomePage chooseGPUtype (User user) {
-//            executorScroll(GPUtypeClick);
-//            executorClick(GPUtypeClick);
-//            WebElement GPUtype = driver.findElement(By.xpath(user.getGPUtype()));
-//            executorScroll(GPUtype);
-//            executorClick(GPUtype);
-//            return this;
-//        }
-//
-//        public HardcoreHomePage chooseLocalSSD (User user) {
-//            executorScroll(localSSDClick);
-//            executorClick(localSSDClick);
-//            WebElement localSSD = driver.findElement(By.xpath(user.getLocalSSD()));
-//            executorScroll(localSSD);
-//            executorClick(localSSD);
-//            return this;
-//        }
-
         public HardcoreHomePage chooseDatacenterLocation (Data user) {
             executorScrollAndClick(datacenterLocationClick);
-            WebElement datacenterLocation = driver.findElement(By.xpath(user.getDatacenterLocation()));
-            sleepWait(5);
-            executorScrollAndClick(datacenterLocation);
+            findOption(datacenterLocationOption, user.getDatacenterLocation());
             return this;
         }
 
         public HardcoreHomePage chooseCommitedUsage (Data user) {
             executorScrollAndClick(commitedUsageClick);
-            WebElement commitedUsage = driver.findElement(By.xpath(user.getCommitedUsage()));
-            sleepWait(5);
-            executorScrollAndClick(commitedUsage);
+            findOption(commitedUsageOption, user.getCommitedUsage());
             return this;
         }
 
